@@ -1,0 +1,25 @@
+.home-section {
+    margin-right: 500px;
+    padding-left: 100px;
+    padding-right: 500px;
+    padding-top: 100px;
+}
+
+.home-section h3 {
+    font-size: 25px;
+    color: #ffffffce;
+}
+
+.home-section h2 {
+    color: #ffffffce;
+    font-size: 35px;
+}
+.home-section h1 {
+    color: rgb(173, 56, 56);
+    font-size: 50px;
+}
+
+.home-section p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}

@@ -1,0 +1,122 @@
+.skills-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    min-height: 400px;
+    max-height: 400px;
+    max-width: 800px;
+    min-width: 800px;
+    position: relative;
+    overflow: hidden; 
+}
+
+.carousel-item-row {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.carousel-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.carousel-item-content p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control-prev {
+    left: -70px; 
+}
+
+.carousel-control-next {
+    right: -70px; 
+}
+
+.carousel-item {
+    transition: transform 0.6s ease; 
+}
+
+.unity p {
+    color: #6e6ecb;
+}
+
+.react p {
+    color: #61dafb; 
+}
+
+.JavaScript p {
+    color: #f0db4f; 
+}
+
+.css p {
+    color: #264de4;
+}
+
+.html p {
+    color: #e34c26;
+}
+
+.typescript p {
+    color: #007acc; 
+}
+
+.angular p {
+    color: #dd0031; 
+}
+
+.CPP p {
+    color: #00599c; 
+}
+
+.Csh p {
+    color: #68217a; 
+}
+
+.express p {
+    color: #444444; 
+}
+
+.nest p {
+    color: #e0234e;
+}
+
+.Java p {
+    color: #007396; 
+}
+
+.SQL p {
+    color: #f29111; 
+}
+
+.mongoDB p {
+    color: #47a248; 
+}
+
+.Git p {
+    color: #f05032; 
+}
