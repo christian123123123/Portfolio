@@ -1,5 +1,5 @@
 import flappyBirdImage from './images/flappy-bird-screenshots.png';
-import spaceInvaderImage from './images/space-invader.png';
+import kitchenChaosImage from './images/kitchen-chaos.png';
 import angularBoardGameImage from './images/angular-board-game.png';
 import 'react-multi-carousel/lib/styles.css';
 import Button from 'react-bootstrap/Button';
@@ -8,8 +8,8 @@ import './Projects.css';
 
 export default function Projects() {
     const urlF = "https://developerfreak.itch.io/flappy-bird-twist";
-    const urlS = "https://github.com/christian123123123/Space-Invaders";
-    const urlB = "http://polytechnique-montr-al.gitlab.io/log2990/20243/equipe-107/LOG2990-107/#/home"
+    const urlS = "https://developerfreak.itch.io/kitchen-chaos";
+    const urlB = "http://polytechnique-montr-al.gitlab.io/log2990/20243/equipe-107/LOG2990-107/#/home";
     return (
         <>
         <Card className="project-card"  key="flappy-bird">
@@ -34,12 +34,12 @@ export default function Projects() {
                 <Button variant="primary" className="project-button" href={urlB}>See Project</Button>
             </Card.Body>
         </Card>
-        <Card className="project-card"  key="space-invader">
-            <Card.Img variant="top" src={spaceInvaderImage} className="project-image"/>
+        <Card className="project-card"  key="kitchen-chaos">
+            <Card.Img variant="top" src={kitchenChaosImage} className="project-image"/>
             <Card.Body className="project-card-body">
-                <Card.Title className="project-title">Space Invader Clone </Card.Title>
+                <Card.Title className="project-title">Kitchen Chaos</Card.Title>
                 <Card.Text className="project-description">
-                    A Space Invader clone developed in Unity. I had to learn how to instantiate objects and enemies with specific speed and velocity.
+                    A Unity project that contains advanced features like event handling, scriptable objects and more. 
                 </Card.Text>
                 <Button variant="primary" className="project-button" href={urlS}>See Project</Button>
             </Card.Body>
