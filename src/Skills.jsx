@@ -1,99 +1,79 @@
-import Carousel from 'react-bootstrap/Carousel';
+// Skills.jsx
+import { useState } from 'react';
 import './Skills.css';
-import image from './images/meter1.svg';
-import image2 from './images/meter2.svg';
-import image3 from './images/meter3.svg';
 
-export default function Skills() {
-    return (
-        <>
-        <div className="skills-section">
-            <Carousel indicators={false} interval={3000} controls={true}>
-                <Carousel.Item>
-                    <div className="carousel-item-row">
-                        <div className="carousel-item-content unity">
-                            <img className="carousel-image" src={image3} alt="Meter 1" />
-                            <p>Unity</p>
-                        </div>
-                        <div className="carousel-item-content react">
-                            <img className="carousel-image" src={image2} alt="Meter 2" />
-                            <p>React</p>
-                        </div>
-                        <div className="carousel-item-content JavaScript">
-                            <img className="carousel-image" src={image} alt="Meter 3" />
-                            <p>JavaScript</p>
-                        </div>
-                    </div>
-                </Carousel.Item>
-                <Carousel.Item>
-                <div className="carousel-item-row">
-                        <div className="carousel-item-content css">
-                            <img className="carousel-image" src={image} alt="Meter 4" />
-                            <p>CSS</p>
-                        </div>
-                        <div className="carousel-item-content html">
-                            <img className="carousel-image" src={image} alt="Meter 2" />
-                            <p>HTML</p>
-                        </div>
-                        <div className="carousel-item-content typescript">
-                            <img className="carousel-image" src={image} alt="Meter 3" />
-                            <p>TypeScript</p>
-                        </div>
-                    </div>
-                    </Carousel.Item>
+const Skills = () => {
+const [activeCategory, setActiveCategory] = useState('all');
 
-                    <Carousel.Item>
-                <div className="carousel-item-row">
-                        <div className="carousel-item-content angular">
-                            <img className="carousel-image" src={image} alt="Meter 4" />
-                            <p>Angular</p>
-                        </div>
-                        <div className="carousel-item-content CPP">
-                            <img className="carousel-image" src={image3} alt="Meter 2" />
-                            <p>C++</p>
-                        </div>
-                        <div className="carousel-item-content Csh">
-                            <img className="carousel-image" src={image3} alt="Meter 3" />
-                            <p>C#</p>
-                        </div>
-                    </div>
-                    </Carousel.Item>
+const skills = {
+gameDev: [
+    { name: 'Unity', icon: '🎮', level: 4, projects: 3, tools: ['C#', 'Physics'] },
+    { name: 'C++', icon: '⚙️', level: 3, projects: 4, tools: ['Algorithms', 'Memory'] }
+],
+webDev: [
+    { name: 'React', icon: '⚛️', level: 3, projects: 2, tools: ['Hooks', 'Context API'] },
+    { name: 'Angular', icon: '🅰️', level: 4, projects: 3, tools: ['RxJS', 'Services'] }
+],
+core: [
+    { name: 'DSA', icon: '📊', level: 4, projects: 10, tools: ['Sorting', 'Graphs'] },
+    { name: 'OOP', icon: '🧩', level: 4, projects: 8, tools: ['Design Patterns'] }
+]
+};
 
-                    <Carousel.Item>
-                <div className="carousel-item-row">
-                        <div className="carousel-item-content express">
-                            <img className="carousel-image" src={image2} alt="Meter 4" />
-                            <p>Express</p>
-                        </div>
-                        <div className="carousel-item-content nest">
-                            <img className="carousel-image" src={image3} alt="Meter 2" />
-                            <p>Nest</p>
-                        </div>
-                        <div className="carousel-item-content Java">
-                            <img className="carousel-image" src={image} alt="Meter 3" />
-                            <p>Java</p>
-                        </div>
-                    </div>
-                    </Carousel.Item>
+return (
+<div className="skills-arcade">
+    <div className="category-selector">
+    {['all', 'gameDev', 'webDev', 'core'].map(category => (
+        <button 
+        key={category}
+        className={`category-btn ${activeCategory === category ? 'active' : ''}`}
+        onClick={() => setActiveCategory(category)}
+        >
+        {category === 'gameDev' ? '🎮 Game Dev' :
+            category === 'webDev' ? '🌐 Web Dev' :
+            category === 'core' ? '💻 Core CS' : 'ALL'}
+        </button>
+    ))}
+    </div>
 
-                    <Carousel.Item>
-                <div className="carousel-item-row">
-                        <div className="carousel-item-content SQL">
-                            <img className="carousel-image" src={image} alt="Meter 4" />
-                            <p>SQL</p>
-                        </div>
-                        <div className="carousel-item-content mongoDB">
-                            <img className="carousel-image" src={image} alt="Meter 2" />
-                            <p>MongoDB</p>
-                        </div>
-                        <div className="carousel-item-content Git">
-                            <img className="carousel-image" src={image} alt="Meter 3" />
-                            <p>Git</p>
-                        </div>
-                    </div>
-                    </Carousel.Item>
-            </Carousel>
-        </div>
-        </>
-    );
-}
+    <div className="skills-grid">
+    {Object.entries(skills).map(([category, items]) => (
+        (activeCategory === 'all' || activeCategory === category) && (
+        items.map((skill, index) => (
+            <div key={`${category}-${index}`} className="skill-capsule">
+            <div className="skill-header">
+                <span className="skill-icon">{skill.icon}</span>
+                <h3>{skill.name}</h3>
+                <div className="project-badge">{skill.projects}+ projects</div>
+            </div>
+            
+            <div className="skill-body">
+                <div className="level-indicator">
+                {[...Array(5)].map((_, i) => (
+                    <div 
+                    key={i} 
+                    className={`level-dot ${i < skill.level ? 'active' : ''}`}
+                    ></div>
+                ))}
+                </div>
+                
+                <div className="tool-cloud">
+                {skill.tools.map((tool, i) => (
+                    <span key={i} className="tool-tag">{tool}</span>
+                ))}
+                </div>
+            </div>
+            
+            <div className="skill-footer">
+                <div className="experience-bar" style={{ '--progress': `${(skill.level/5)*100}%` }} />
+            </div>
+            </div>
+        ))
+        )
+    ))}
+    </div>
+</div>
+);
+};
+
+export default Skills;

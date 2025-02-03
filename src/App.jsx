@@ -19,7 +19,6 @@ function App() {
           <Home></Home>
         </section>
         <section className="section skills" id="skills">
-        <h1 className="section-title">What I Can Do</h1>
           <Skills />
         </section>
         <section className="section projects" id="projects">

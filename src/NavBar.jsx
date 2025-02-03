@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useEffect, useState} from 'react';
-import logo from './images/portfolio-logo.png'
+import logo from './images/new-logo-red.png'
 
 function NavBar() {
   const [activeLink, setActiveLink] = useState('home');

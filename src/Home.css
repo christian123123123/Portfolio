@@ -1,25 +1,205 @@
+/* Home.css */
 .home-section {
-    margin-right: 500px;
-    padding-left: 100px;
-    padding-right: 500px;
-    padding-top: 100px;
-}
-
-.home-section h3 {
-    font-size: 25px;
+    padding: 8% 10% 8% 15%; /* Increased left padding */
+    max-width: 1200px;
+    margin: 0 0 0 5%; /* Shift container to the left */
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+  }
+  
+  
+  .home-section.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .home-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .name-glow {
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 77, 77, 0.6);
+    margin: 1rem 0;
+    line-height: 1.1;
+    text-shadow: 0 0 15px rgba(255, 77, 77, 0.6), 
+               1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .greeting {
+    font-size: 1.4rem;
     color: #ffffffce;
-}
-
-.home-section h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .dynamic-role {
+    margin: 1.5rem 0;
+    height: 40px;
+  }
+  
+  .role-badge {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 77, 77, 0.15);
+    border: 2px solid #ff4d4d;
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    animation: roleTransition 0.5s ease;
+  }
+  
+  @keyframes roleTransition {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .highlight-card {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .highlight-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .highlight-number {
+    font-size: 2.2rem;
+    color: #ff4d4d;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .highlight-text {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
     color: #ffffffce;
-    font-size: 35px;
-}
-.home-section h1 {
-    color: rgb(173, 56, 56);
-    font-size: 50px;
-}
-
-.home-section p {
+  }
+  
+  .bio {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-}
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 2rem 0;
+    color: #ffffffce;
+  }
+  
+  .highlight {
+    color: #ff4d4d;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff4d4d;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .highlight:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  
+  .cta-button {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button.primary {
+    background: #ff4d4d;
+    color: #121212;
+    border: 2px solid transparent;
+  }
+  
+  .cta-button.primary:hover {
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.5);
+  }
+  
+  .cta-button.secondary {
+    background: transparent;
+    color: #ff4d4d;
+    border: 2px solid #ff4d4d;
+  }
+  
+  .cta-button.secondary:hover {
+    background: rgba(255, 77, 77, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .home-section {
+        padding-left: 10%;
+        margin-left: 3%;
+      }
+    .name-glow {
+      font-size: 2.5rem;
+    }
+    
+    .role-badge {
+      font-size: 0.9rem;
+    }
+    
+    .bio {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .home-section {
+        padding: 15% 5% 15% 8%;
+        margin-left: 2%;
+      }
+    
+    .name-glow {
+      font-size: 2rem;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+    }
+  }
+
+  .home-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -20%;
+    right: 0;
+    bottom: -10%;
+    width: 130%;
+    background: linear-gradient(90deg, rgba(18, 18, 18, 0.9) 60%, transparent 100%);
+    z-index: 1;
+  }
+  
+  .home-content {
+    position: relative;
+    z-index: 2;
+  }

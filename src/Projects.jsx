@@ -7,44 +7,68 @@ import Card from 'react-bootstrap/Card';
 import './Projects.css';
 
 export default function Projects() {
-    const urlF = "https://developerfreak.itch.io/flappy-bird-twist";
-    const urlS = "https://developerfreak.itch.io/kitchen-chaos";
-    const urlB = "http://polytechnique-montr-al.gitlab.io/log2990/20243/equipe-107/LOG2990-107/#/home";
-    return (
-        <>
-        <Card className="project-card"  key="flappy-bird">
-            <Card.Img variant="top" src={flappyBirdImage} className="project-image"/>
-            <Card.Body className="project-card-body">
 
-                <Card.Title className="project-title">Flappy Bird Clone</Card.Title>
-                <Card.Text className="project-description">
-                    A Flappy Bird clone developed in Unity as my first game development project. It features simple gameplay mechanics.
-                </Card.Text>
-                <Button variant="primary" className="project-button" href={urlF}>See Project</Button>
-            </Card.Body>
+  
+  const urlF = "https://developerfreak.itch.io/flappy-bird-twist";
+  const urlS = "https://developerfreak.itch.io/kitchen-chaos";
+  const urlB = "http://polytechnique-montr-al.gitlab.io/log2990/20243/equipe-107/LOG2990-107/#/home";
+  const projects = [
+    {
+      title: "Flappy Bird Clone",
+      image: flappyBirdImage,
+      url: urlF,
+      description: "A Flappy Bird clone developed in Unity with procedural generation and adaptive difficulty",
+      tech: ["Unity", "C#", "Physics", "UI System"]
+    },
+    {
+      title: "Board Game Platform",
+      image: angularBoardGameImage,
+      url: urlB,
+      description: "Real-time multiplayer board game with Angular/NestJS backend handling 100+ concurrent users",
+      tech: ["Angular", "TypeScript", "NestJS", "MongoDB"]
+    },
+    {
+      title: "Kitchen Chaos",
+      image: kitchenChaosImage,
+      url: urlS,
+      description: "Overcooked-inspired co-op game featuring advanced Unity systems and network synchronization",
+      tech: ["Unity", "C#", "Photon", "ScriptableObjects"]
+    }
+  ];
+
+  return (
+    <div className="projects-grid">
+      {projects.map((project) => (
+        <Card 
+          key={project.title}
+          className="project-card"
+          data-aos="fade-up" // Remove this if not using AOS
+        >
+          <div className="card-overlay">
+            <Card.Img src={project.image} className="project-image"/>
+            <div className="tech-stack">
+              {project.tech.map((tech, idx) => (
+                <span key={idx} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+          
+          <Card.Body className="project-card-body">
+            <Card.Title className="project-title">{project.title}</Card.Title>
+            <Card.Text className="project-description">{project.description}</Card.Text>
+            
+            <Button 
+              href={project.url} 
+              className="project-button"
+            >
+              <span className="button-text">VIEW PROJECT</span>
+              <div className="button-glitch"></div>
+            </Button>
+          </Card.Body>
+          
+          <div className="card-border"></div>
         </Card>
-        <Card className="project-card"  key="board-game">
-            <Card.Img variant="top" src={angularBoardGameImage} className="project-image"/>
-            <Card.Body className="project-card-body">
-                <Card.Title className="project-title">Board Game</Card.Title>
-                <Card.Text className="project-description">
-                    A board game developed in Angular using TypeScript and NestJS.
-                   
-                </Card.Text>
-                <Button variant="primary" className="project-button" href={urlB}>See Project</Button>
-            </Card.Body>
-        </Card>
-        <Card className="project-card"  key="kitchen-chaos">
-            <Card.Img variant="top" src={kitchenChaosImage} className="project-image"/>
-            <Card.Body className="project-card-body">
-                <Card.Title className="project-title">Kitchen Chaos</Card.Title>
-                <Card.Text className="project-description">
-                    A Unity project that contains advanced features like event handling, scriptable objects and more. 
-                </Card.Text>
-                <Button variant="primary" className="project-button" href={urlS}>See Project</Button>
-            </Card.Body>
-        </Card>
-       
-        </>
-    );
+      ))}
+    </div>
+  );
 }
