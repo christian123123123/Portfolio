@@ -17,7 +17,7 @@ export default function Projects() {
       title: "Kitchen Chaos",
       image: kitchenChaosImage,
       url: urlS,
-      description: "Overcooked-inspired co-op game featuring advanced Unity systems and network synchronization(multiplayer in progress)",
+      description: "Overcooked-inspired co-op game featuring advanced Unity systems and network synchronization",
       tech: ["Unity", "C#", "EventHandler", "ScriptableObjects"]
     },
     {
