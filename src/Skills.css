@@ -154,3 +154,37 @@ width: 150%;
 background: linear-gradient(90deg, rgba(18, 18, 18, 0.9) 60%, transparent 100%);
 z-index: 0;
 }
+
+@media (max-width: 768px) {
+.skills-arcade {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    }
+
+    .skills-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        z-index: 1;
+        }
+
+
+    .skill-capsule {
+        border-radius: 35px;
+        width: 90%;
+        padding: 1.5rem;
+        border: 1px solid #ff4d4d33;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 1;
+        }
+}
+
+   
+  
+   
+  
+     

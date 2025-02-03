@@ -510,6 +510,208 @@ span.navbar-text {
 }
 
 
+/* Mobile-first base styles */
+body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+  
+  .section {
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+
+  nav.navbar .App-logo {
+    margin-left: 20px;
+    height: 12vmin !important;
+  }
+
+  
+  .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    z-index: 10000;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  
+  .navbar-toggler-icon {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #ff4d4d;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-toggler-icon::before {
+    transform: translateY(-8px);
+  }
+  
+  .navbar-toggler-icon::after {
+    transform: translateY(8px);
+  }
+  
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background: transparent;
+  }
+  
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    background: #ff4d4d;
+  }
+  
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    background: #ff4d4d;
+  }
+  
+  /* Mobile Menu */
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 5rem 2rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 2px solid #ff4d4d33;
+  }
+  
+  .navbar-collapse.show {
+    right: 0;
+  }
+  
+  /* Mobile Menu Links */
+  .navbar-nav {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #ff4d4d;
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover::before,
+  .navbar-nav .nav-link.active::before {
+    width: 100%;
+  }
+  
+  /* Close on outside click */
+  .navbar-collapse::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .navbar-collapse.show::before {
+    left: 0;
+    opacity: 1;
+  }
+
+  
+}
+
+/* Mobile Scrollbar Overrides */
+@media (max-width: 768px) {
+  /* For Webkit (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ff4d4d;
+    border: none;
+    min-height: 40px; /* Minimum touch target size */
+  }
+
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #ff4d4d transparent;
+  }
+}
+
+/* Completely hide scrollbar on very small mobile */
+@media (max-width: 480px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    scrollbar-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-title {
+    font-size: 1.8rem;
+  }
+
+  .footer-socials a {
+    font-size: 1.8rem;
+    margin: 0 15px;
+  }
+
+  .footer::before {
+    animation-duration: 15s;
+  }
+}
+
+/* Minimum 48x48px touch targets */
+.navbar-toggler,
+.project-button,
+.social-icon {
+  min-width: 48px;
+  min-height: 48px;
+}
+
 
 
 

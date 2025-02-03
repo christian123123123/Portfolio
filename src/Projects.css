@@ -169,8 +169,20 @@
       grid-template-columns: 1fr;
       padding: 1rem;
     }
-    
+  
     .project-card {
-      min-height: auto;
+      width: 100%;
+      min-width: auto;
+      height: auto;
+      margin: 1rem 0;
+    }
+  
+    .project-image {
+      height: 180px;
+    }
+  
+    .project-button {
+      width: 100%;
+      padding: 12px;
     }
   }

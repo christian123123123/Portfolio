@@ -203,3 +203,22 @@
     position: relative;
     z-index: 2;
   }
+
+  @media (max-width: 768px) {
+    .home-section {
+      padding: 20% 5%;
+    }
+  
+    .name-glow {
+      font-size: 2rem !important;
+      line-height: 1.2;
+    }
+  
+    .dynamic-role {
+      font-size: 1.1rem;
+    }
+  
+    .highlights-grid {
+      grid-template-columns: 1fr;
+    }
+  }
