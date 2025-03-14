@@ -8,11 +8,12 @@ const [activeCategory, setActiveCategory] = useState('all');
 const skills = {
 gameDev: [
     { name: 'Unity', icon: '🎮', level: 4, projects: 3, tools: ['C#', 'Physics'] },
-    { name: 'C++', icon: '⚙️', level: 3, projects: 4, tools: ['Algorithms', 'Memory'] }
+    { name: 'C++', icon: '⚙️', level: 5, projects: 4, tools: ['Algorithms', 'Memory'] },
+    { name: 'Unreal', icon: '🎮', level: 4, projects: 2, tools: ['C++', 'Blueprints'] }
 ],
 webDev: [
-    { name: 'React', icon: '⚛️', level: 3, projects: 2, tools: ['Hooks', 'Context API'] },
-    { name: 'Angular', icon: '🅰️', level: 4, projects: 3, tools: ['RxJS', 'Services'] }
+    { name: 'React', icon: '⚛️', level: 4, projects: 2, tools: ['Hooks', 'Context API'] },
+    { name: 'Angular', icon: '🅰️', level: 5, projects: 3, tools: ['RxJS', 'Services'] }
 ],
 core: [
     { name: 'DSA', icon: '📊', level: 4, projects: 10, tools: ['Sorting', 'Graphs'] },
