@@ -1,6 +1,7 @@
 import flappyBirdImage from './images/flappy-bird-screenshots.png';
 import kitchenChaosImage from './images/kitchen-chaos.png';
 import angularBoardGameImage from './images/angular-board-game.png';
+import masterClassImage from './images/MasterClassScreenshot.png';
 import 'react-multi-carousel/lib/styles.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -12,6 +13,7 @@ export default function Projects() {
   const urlF = "https://developerfreak.itch.io/flappy-bird-twist";
   const urlS = "https://developerfreak.itch.io/kitchen-chaos";
   const urlB = "http://polytechnique-montr-al.gitlab.io/log2990/20243/equipe-107/LOG2990-107/#/home";
+  const urlM = "https://developerfreak.itch.io/masterclass"
   const projects = [
     {
       title: "Kitchen Chaos",
@@ -33,6 +35,13 @@ export default function Projects() {
       url: urlF,
       description: "A Flappy Bird clone developed in Unity with procedural generation and adaptive difficulty",
       tech: ["Unity", "C#", "Physics", "UI System"]
+    },
+    {
+      title: "MasterClass",
+      image: masterClassImage,
+      url: urlM,
+      description: "A third person action game developed in Unreal Engine with AI pathfinding and combat system",
+      tech: ["Unreal", "C++", "AI Pathfinding", "Combat System"]
     },
     
   ];
