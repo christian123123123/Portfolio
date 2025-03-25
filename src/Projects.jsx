@@ -1,7 +1,7 @@
-import flappyBirdImage from './images/flappy-bird-screenshots.png';
+import CryptRaider from './images/CryptRaider.png';
 import kitchenChaosImage from './images/kitchen-chaos.png';
 import angularBoardGameImage from './images/angular-board-game.png';
-import masterClassImage from './images/MasterClassScreenshot.png';
+import ToonTanks from './images/ToonTanks.png';
 import 'react-multi-carousel/lib/styles.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -10,10 +10,10 @@ import './Projects.css';
 export default function Projects() {
 
   
-  const urlF = "https://developerfreak.itch.io/flappy-bird-twist";
+  const urlF = "https://developerfreak.itch.io/crypt-raider";
   const urlS = "https://developerfreak.itch.io/kitchen-chaos";
   const urlB = "http://polytechnique-montr-al.gitlab.io/log2990/20243/equipe-107/LOG2990-107/#/home";
-  const urlM = "https://developerfreak.itch.io/masterclass"
+  const urlM = "https://developerfreak.itch.io/toon-tanks"
   const projects = [
     {
       title: "Kitchen Chaos",
@@ -23,25 +23,25 @@ export default function Projects() {
       tech: ["Unity", "C#", "EventHandler", "ScriptableObjects"]
     },
     {
-      title: "Board Game Platform",
+      title: "Board Game",
       image: angularBoardGameImage,
       url: urlB,
       description: "Real-time multiplayer board game with Angular/NestJS backend handling 10+ concurrent users",
       tech: ["Angular", "TypeScript", "NestJS", "MongoDB"]
     },
     {
-      title: "Flappy Bird Clone",
-      image: flappyBirdImage,
+      title: "Crypt Raider",
+      image: CryptRaider,
       url: urlF,
-      description: "A Flappy Bird clone developed in Unity with procedural generation and adaptive difficulty",
-      tech: ["Unity", "C#", "Physics", "UI System"]
+      description: "A mini-game in Unreal Engine and C++ with object pickup and object identification mechanics",
+      tech: ["Unreal", "C++", "Physics", "Blueprints"]
     },
     {
-      title: "MasterClass",
-      image: masterClassImage,
+      title: "Toon Tanks",
+      image: ToonTanks,
       url: urlM,
-      description: "A third person action game developed in Unreal Engine with AI pathfinding and combat system",
-      tech: ["Unreal", "C++", "AI Pathfinding", "Combat System"]
+      description: "A top down roguelike action game developed in Unreal Engine with different levels and a combat system",
+      tech: ["Unreal", "C++", "Combat System", "Level Design"]
     },
     
   ];

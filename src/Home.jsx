@@ -42,7 +42,7 @@ export default function Home() {
 
         <p className="bio">
           Software Engineering student at <strong>Polytechnique Montréal</strong> building immersive experiences through code. 
-          Currently crafting <span className="highlight">game mechanics</span> in Unity and <span className="highlight">scalable web apps</span> with modern stacks. 
+          Currently crafting <span className="highlight">game mechanics</span> in Unreal Engine and Unity and <span className="highlight">scalable web apps</span> with modern stacks. 
           Passionate about merging technical excellence with creative problem-solving.
         </p>
 
