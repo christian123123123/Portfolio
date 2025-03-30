@@ -2,6 +2,7 @@ import CryptRaider from './images/CryptRaider.png';
 import kitchenChaosImage from './images/kitchen-chaos.png';
 import angularBoardGameImage from './images/angular-board-game.png';
 import ToonTanks from './images/ToonTanks.png';
+import SimpleShooter from './images/SimpleShooter.png';
 import 'react-multi-carousel/lib/styles.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -14,6 +15,7 @@ export default function Projects() {
   const urlS = "https://developerfreak.itch.io/kitchen-chaos";
   const urlB = "http://polytechnique-montr-al.gitlab.io/log2990/20243/equipe-107/LOG2990-107/#/home";
   const urlM = "https://developerfreak.itch.io/toon-tanks"
+  const urlSM = "https://developerfreak.itch.io/simple-shooter"
   const projects = [
     {
       title: "Kitchen Chaos",
@@ -43,6 +45,13 @@ export default function Projects() {
       description: "A top down roguelike action game developed in Unreal Engine with different levels and a combat system",
       tech: ["Unreal", "C++", "Combat System", "Level Design"]
     },
+    {
+      title: "Simple Shooter",
+      image: SimpleShooter,
+      url: urlSM,
+      description: "A third person shooter developed in Unreal Engine, with enemy AI implemented using Behavior Trees",
+      tech: ["Unreal", "C++", "Behavior Tree", "Animation Blend"]
+    },
     
   ];
 
@@ -52,7 +61,7 @@ export default function Projects() {
         <Card 
           key={project.title}
           className="project-card"
-          data-aos="fade-up" // Remove this if not using AOS
+          data-aos="fade-up"
         >
           <div className="card-overlay">
             <Card.Img src={project.image} className="project-image"/>
